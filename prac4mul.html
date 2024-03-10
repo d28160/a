@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Multiplication</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+</head>
+
+<body>
+    <div ng-app="MultiplicationApp" ng-controller="DemoMulController">
+        First Number:
+        <input type="text" ng-model="num1">
+        <br><br>
+        Second Number:
+        <input type="text" ng-model="num2">
+        <br><br>
+        Multiplication :{{mul()}}
+    </div>
+
+
+    <script>
+        var MultiplicationApp = angular.module('MultiplicationApp', []);
+        MultiplicationApp.controller('DemoMulController', function ($scope) {
+            $scope.mul = function () {
+                $scope.n1 = Number($scope.num1);
+                $scope.n2 = Number($scope.num2);
+                return $scope.n1 * $scope.n2;
+            };
+        });
+    </script>
+</body>
+
+</html>

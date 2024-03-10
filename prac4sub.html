@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Subtraction</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+</head>
+
+<body>
+    <div ng-app="SubtractionApp" ng-controller="DemoSubController">
+        First Number:
+        <input type="text" ng-model="num1">
+        <br><br>
+        Second Number:
+        <input type="text" ng-model="num2">
+        <br><br>
+        Subtraction :{{sub()}}
+    </div>
+    <script>
+        var SubtractionApp = angular.module('SubtractionApp', []);
+        SubtractionApp.controller('DemoSubController', function ($scope) {
+            $scope.sub = function () {
+                $scope.n1 = Number($scope.num1);
+                $scope.n2 = Number($scope.num2);
+                return $scope.n1 - $scope.n2;
+            };
+        });
+    </script>
+</body>
+
+</html>
